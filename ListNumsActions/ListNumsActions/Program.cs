@@ -31,9 +31,25 @@ namespace ListNumsActions
                     case "remove":
                         //TODO
                         break;
-                    //TODO
+
+                    case "cut":
+                        int n = int.Parse(cmd[1]);
+                        if (n >= nums.Count)
+                        {
+                            nums.Clear();
+                        }
+                        else
+                        {
+                            nums.RemoveRange(0, n);
+                        }
+                        break;
+
+                    case "print":
+                        Console.WriteLine(string.Join(" ", nums));
+                        break;
 
                     default:
+                        Console.WriteLine("Invalid command");
                         break;
                 }
             }
