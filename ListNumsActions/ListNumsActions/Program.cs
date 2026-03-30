@@ -19,6 +19,11 @@ namespace ListNumsActions
                 }
                 switch (command)
                 {
+                    case "add":
+                        int a = int.Parse(cmd[1]);
+                        int b = int.Parse(cmd[2]);
+                        nums.Add(a + b);
+                        break;
                     case "ins":
                         //TODO
                         break;
@@ -29,7 +34,7 @@ namespace ListNumsActions
                         //TODO
                         break;
                     case "remove":
-                        //TODO
+                        nums.RemoveAt(int.Parse(cmd[1]));
                         break;
                     //TODO
 
