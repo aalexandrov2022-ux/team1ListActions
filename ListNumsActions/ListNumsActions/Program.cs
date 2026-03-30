@@ -32,6 +32,21 @@ namespace ListNumsActions
                         break;
                     case "remove":
                     //TODO
+                    case "large":
+                        int number = int.Parse(cmd[1]);
+
+                        var result = nums.Where(x => x > number);
+
+                        Console.WriteLine(string.Join(" ", result));
+                        break;
+                    case "count":
+                        int num = int.Parse(cmd[1]);
+
+                        int count = nums.Count(x => x > num);
+
+                        Console.WriteLine(count);
+                        break;
+                    
                         break;
 
                     case "cut":
