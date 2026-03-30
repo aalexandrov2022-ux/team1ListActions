@@ -19,6 +19,11 @@ namespace ListNumsActions
                 }
                 switch (command)
                 {
+                    case "add":
+                        int a = int.Parse(cmd[1]);
+                        int b = int.Parse(cmd[2]);
+                        nums.Add(a + b);
+                        break;
                     case "ins":
                         nums.Insert(int.Parse(cmd[1]), int.Parse(cmd[2]));
                         break;
@@ -31,6 +36,8 @@ namespace ListNumsActions
                         Console.WriteLine(nums.Contains(int.Parse(cmd[1])) ? "YES" : "NO");
                         break;
                     case "remove":
+                        nums.RemoveAt(int.Parse(cmd[1]));
+                        break;
                     //TODO
                     case "large":
                         int number = int.Parse(cmd[1]);
