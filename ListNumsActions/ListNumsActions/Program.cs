@@ -20,17 +20,17 @@ namespace ListNumsActions
                 switch (command)
                 {
                     case "ins":
-                        //TODO
+                        nums.Insert(int.Parse(cmd[1]), int.Parse(cmd[2]));
                         break;
+
                     case "del":
-                        //TODO
+                        nums.Remove(int.Parse(cmd[1]));
                         break;
+
                     case "contains":
-                        //TODO
+                        Console.WriteLine(nums.Contains(int.Parse(cmd[1])) ? "YES" : "NO");
                         break;
                     case "remove":
-                        //TODO
-                        break;
                     //TODO
                     case "large":
                         int number = int.Parse(cmd[1]);
@@ -47,8 +47,26 @@ namespace ListNumsActions
                         Console.WriteLine(count);
                         break;
                     
+                        break;
+
+                    case "cut":
+                        int n = int.Parse(cmd[1]);
+                        if (n >= nums.Count)
+                        {
+                            nums.Clear();
+                        }
+                        else
+                        {
+                            nums.RemoveRange(0, n);
+                        }
+                        break;
+
+                    case "print":
+                        Console.WriteLine(string.Join(" ", nums));
+                        break;
 
                     default:
+                        Console.WriteLine("Invalid command");
                         break;
                 }
             }
